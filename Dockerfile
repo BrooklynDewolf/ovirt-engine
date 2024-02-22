@@ -10,8 +10,9 @@ RUN dnf -y --nobest update && \
     dnf install -y createrepo_c && \
     pip3 install "ansible-lint>=6.0.0,<7.0.0"
 
-# Copy the source code from the host directory to /src in the container
+# Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
+COPY .git /src/.git
 
 # Set the working directory to /src
 WORKDIR /src
