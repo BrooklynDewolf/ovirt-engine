@@ -13,27 +13,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: centos-stream-8
-            container-name: el8stream
-            pip-command: pip3.9
           - name: centos-stream-9
             container-name: el9stream
             pip-command: pip3
 
-    name: ${{ matrix.name }}
+    name: el9stream
 
     env:
       ARTIFACTS_DIR: exported-artifacts
 
     container:
-      image: quay.io/ovirt/buildcontainer:${{ matrix.container-name }}
+      image: quay.io/ovirt/buildcontainer:el9stream
 
     steps:
     - name: Install required PyPI packages
-      run: ${{ matrix.pip-command }} install "ansible-lint>=6.0.0,<7.0.0"
-
-    - name: Checkout sources
-      uses: ovirt/checkout-action@main
+      run: pip3 install "ansible-lint>=6.0.0,<7.0.0"
 
     - name: Perform build
       run: |
@@ -42,8 +36,3 @@ jobs:
     - name: Create DNF repository
       run: |
         createrepo_c $ARTIFACTS_DIR
-
-    - name: Upload artifacts
-      uses: ovirt/upload-rpms-action@main
-      with:
-        directory: ${{ env.ARTIFACTS_DIR }}

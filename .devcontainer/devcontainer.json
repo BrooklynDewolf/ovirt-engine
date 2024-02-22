@@ -1,0 +1,7 @@
+{
+  "name": "oVirt",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  }
+}
