@@ -15,7 +15,3 @@ COPY . /src
 
 # Set the working directory to /src
 WORKDIR /src
-
-# Run the build script and create a DNF repository with the artifacts
-RUN ./.automation/build-rpm.sh $ARTIFACTS_DIR && \
-    createrepo_c $ARTIFACTS_DIR
