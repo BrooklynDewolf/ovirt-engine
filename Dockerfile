@@ -12,7 +12,6 @@ RUN dnf -y --nobest update && \
 
 # Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
-COPY .git /src/.git
 
 # Set the working directory to /src
 WORKDIR /src
