@@ -1,7 +1,6 @@
 {
   "name": "oVirt",
   "build": {
-    "dockerfile": "../Dockerfile",
-    "context": ".."
+    "dockerfile": "../Dockerfile"
   }
 }
