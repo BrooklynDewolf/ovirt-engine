@@ -9,7 +9,7 @@ ENV ARTIFACTS_DIR=exported-artifacts
 RUN dnf -y --nobest update && \
     dnf install -y createrepo_c && \
     pip3 install "ansible-lint>=6.0.0,<7.0.0" && \
-    dnf builddep --spec ovirt-engine.spec.in
+    make ovirt-engine.spec.in
 
 # Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
