@@ -16,3 +16,6 @@ COPY . /src
 
 # Set the working directory to /src
 WORKDIR /src
+
+# Run Spec
+RUN make ovirt-engine.spec
