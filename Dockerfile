@@ -7,7 +7,7 @@ FROM quay.io/ovirt/buildcontainer:el9stream
 RUN dnf -y --nobest update && \
     dnf install -y sudo && \
     pip3 install "ansible-lint>=6.0.0,<7.0.0" && \
-    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
+    echo build ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/build
 
 # Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
