@@ -16,5 +16,14 @@ COPY . /src
 # Set the working directory to /src
 WORKDIR /src
 
-# Run Spec
+# Build Spec
 RUN make ovirt-engine.spec
+
+# Install builds deps
+RUN dnf builddep ovirt-engine.spec
+
+# Install run deps
+RUN dnf -y install python3-daemon
+
+# Set default User
+USER build
