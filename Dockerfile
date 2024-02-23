@@ -1,14 +1,13 @@
+ARG USERNAME=build
+
 # Use CentOS Stream 9 container image from quay.io as the base
 FROM quay.io/ovirt/buildcontainer:el9stream
 
-# Set environment variable for the artifacts directory
-ENV ARTIFACTS_DIR=exported-artifacts
-
 # Install required PyPI packages using pip3
-# Ensure system packages are up to date and install createrepo_c for creating DNF repositories
 RUN dnf -y --nobest update && \
-    dnf install -y createrepo_c && \
-    pip3 install "ansible-lint>=6.0.0,<7.0.0"
+    dnf install -y sudo && \
+    pip3 install "ansible-lint>=6.0.0,<7.0.0" && \
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
 
 # Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
@@ -23,7 +22,10 @@ RUN make ovirt-engine.spec
 RUN dnf builddep ovirt-engine.spec
 
 # Install run deps
-RUN dnf -y install python3-daemon
+RUN dnf -y install python3-daemon otopi-common
+
+# Symlink python to python3
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # Set default User
-USER build
+USER $USERNAME
