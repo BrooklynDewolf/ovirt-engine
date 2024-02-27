@@ -1,13 +1,14 @@
-ARG USERNAME=build
-
 # Use CentOS Stream 9 container image from quay.io as the base
 FROM quay.io/ovirt/buildcontainer:el9stream
+
+ARG USERNAME=build
+ENV USERNAME=$USERNAME
 
 # Install required PyPI packages using pip3
 RUN dnf -y --nobest update && \
     dnf install -y sudo && \
     pip3 install "ansible-lint>=6.0.0,<7.0.0" && \
-    echo build ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/build
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
 
 # Explicitly copy the current directory and the .git directory to /src in the container
 COPY . /src
@@ -22,10 +23,10 @@ RUN make ovirt-engine.spec
 RUN dnf builddep ovirt-engine.spec
 
 # Install run deps
-RUN dnf -y install python3-daemon otopi-common
+RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql
 
-# Symlink python to python3
-RUN ln -s /usr/bin/python3 /usr/bin/python
+# engine-setup needs the link to initctl
+RUN ln -s /usr/sbin/service /usr/bin/initctl
 
 # Set default User
 USER $USERNAME
