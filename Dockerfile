@@ -1,7 +1,7 @@
 # Use CentOS Stream 9 container image from quay.io as the base
 FROM quay.io/ovirt/buildcontainer:el9stream
 
-ARG USERNAME=build
+ARG USERNAME=root
 ENV USERNAME=$USERNAME
 
 # Install required PyPI packages using pip3
