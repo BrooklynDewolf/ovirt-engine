@@ -1,7 +1,7 @@
 # Use CentOS Stream 9 container image from quay.io as the base
 FROM quay.io/ovirt/buildcontainer:el9stream
 
-ARG USERNAME=root
+ARG USERNAME=build
 ENV USERNAME=$USERNAME
 
 # Install required PyPI packages using pip3
@@ -23,7 +23,7 @@ RUN make ovirt-engine.spec
 RUN dnf builddep ovirt-engine.spec
 
 # Install run deps
-RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql
+RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql ovirt-engine-wildfly-overlay
 
 # engine-setup needs the link to initctl
 RUN ln -s /usr/sbin/service /usr/bin/initctl
