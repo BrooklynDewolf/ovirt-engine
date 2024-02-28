@@ -16,6 +16,9 @@ COPY . /src
 # Set the working directory to /src
 WORKDIR /src
 
+# Persist this folder to keep the generated TLS certificates on first start
+VOLUME /etc/pki/ovirt-engine
+
 # Build Spec
 RUN make ovirt-engine.spec
 

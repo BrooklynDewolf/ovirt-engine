@@ -12,13 +12,13 @@ You can use the Remote Explorer to SSH to a remote destination server running Do
 
 ### Building the application
 
-The application can be built for development by running the following command
+The development environment can be built an installed with the following command;
 
 ```
-make all-dev PREFIX=/home/build/ovirt/
+make install-dev PREFIX=/home/build/ovirt/
 ```
 
-This will start building the application, the tests can be skipped by adding the `SKIP_TESTS=1` flag after the previous command.
+This will start building the application, the tests can be skipped by adding the `SKIP_TESTS=1` flag after the previous command. The installation directory is specified with the `PREFIX` flag.
 
 ### Setup the PostgresQL database
 
