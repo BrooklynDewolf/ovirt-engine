@@ -14,3 +14,7 @@ services:
       - "postgres"
       - "-c"
       - "config_file=/etc/postgresql/postgresql.conf"
+networks:
+  default:
+    name: ovirt
+    driver: bridge

@@ -16,14 +16,11 @@ COPY . /src
 # Set the working directory to /src
 WORKDIR /src
 
-# Persist this folder to keep the generated TLS certificates on first start
-VOLUME /etc/pki/ovirt-engine
-
 # Build Spec
 RUN make ovirt-engine.spec
 
 # Install builds deps
-RUN dnf builddep ovirt-engine.spec
+RUN dnf -y builddep ovirt-engine.spec
 
 # Install run deps
 RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql ovirt-engine-wildfly-overlay
@@ -33,3 +30,6 @@ RUN ln -s /usr/sbin/service /usr/bin/initctl
 
 # Set default User
 USER $USERNAME
+
+# Expose oVirt-Engine ports
+EXPOSE 8080 8443

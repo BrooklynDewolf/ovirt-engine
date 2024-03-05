@@ -3,5 +3,5 @@
   "build": {
     "dockerfile": "../Dockerfile"
   },
-  "runArgs": ["--add-host=host.docker.internal:host-gateway"]
+  "runArgs": ["--network=ovirt"]
 }
