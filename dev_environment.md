@@ -4,6 +4,18 @@ There is already a `devcontainer.json` file present in the root directory of thi
 
 Make sure that tools like [git](https://git-scm.com/) and [Docker](https://www.docker.com/) are installed on the machine that the devcontainer is running on. 
 
+### Setup the PostgresQL database
+
+Navigate to the project directory (if remote, SSH to your and navigate to where your source files of this project are stored). You can use the Docker compose file to fully setup your PostgresQL container with testing credentials by running:
+
+```
+docker compose up -d
+```
+
+The `-d` flag starts the container in detached mode. 
+
+> It is important that the compose file is run before creating the dev container, otherwise there will be Docker networking issues.
+
 ### Build & connect to your Dev Container
 
 #### Remote Dev Container
@@ -20,26 +32,22 @@ make install-dev PREFIX=/home/build/ovirt/
 
 This will start building the application, the tests can be skipped by adding the `SKIP_TESTS=1` flag after the previous command. The installation directory is specified with the `PREFIX` flag.
 
-### Setup the PostgresQL database
-
-Navigate to project directory outside of your Dev Container (if remote, SSH to your and navigate to where your source files of this project are stored). You can use the Docker compose file to fully setup your PostgresQL container with testing credentials by running:
-
-```
-docker compose up -d
-```
-
-The `-d` flag starts the container in detached mode. 
-
-> Make sure to run this in the root directory of the project repository (and not in your Dev Container!).
 
 ### Run the oVirt Engine setup
 
 If all the previous steps have been done correctly, it is time to setup your oVirt Engine. You can do this manually by running the following command:
 
 ```
-/home/build/ovirt/bin/engine-setup --offline
+/home/build/ovirt/bin/engine-setup --offline --config=answers.config.in
 ```
 
 However, it is also possible to setup the engine with standard values to speed up the process by adding the `--config=answers.config.in` flag to the command above. Make sure you are in the root directory of your project when using this flag.
 
 The values entered by this config can be found in `answers.config.in` file.
+
+### Running the engine itself
+
+You can start the engine by running the `ovirt-engine.py` file with start argument to start the engine:
+```
+/home/build/ovirt/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start
+```

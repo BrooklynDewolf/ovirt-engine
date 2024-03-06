@@ -3,5 +3,6 @@
   "build": {
     "dockerfile": "../Dockerfile"
   },
-  "runArgs": ["--network=ovirt"]
+  "runArgs": ["--network=ovirt"],
+  "appPort": [ "8080:8080", "8443:8443" ]
 }
