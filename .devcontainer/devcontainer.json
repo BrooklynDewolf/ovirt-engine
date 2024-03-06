@@ -4,5 +4,5 @@
     "dockerfile": "../Dockerfile"
   },
   "runArgs": ["--network=ovirt"],
-  "appPort": [ "8080:8080", "8443:8443" ]
+  "appPort": [ "8080:8080", "8443:8443", "8787:8787" ]
 }

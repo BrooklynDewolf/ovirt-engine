@@ -47,6 +47,12 @@ The values entered by this config can be found in `answers.config.in` file.
 
 ### Running the engine itself
 
+First, you need to set the ulimit of your environment:
+
+```
+ulimit -n 2048
+```
+
 You can start the engine by running the `ovirt-engine.py` file with start argument to start the engine:
 ```
 /home/build/ovirt/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start
