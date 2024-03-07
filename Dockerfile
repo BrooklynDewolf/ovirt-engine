@@ -23,7 +23,7 @@ RUN make ovirt-engine.spec
 RUN dnf -y builddep ovirt-engine.spec
 
 # Install run deps
-RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql ovirt-engine-wildfly-overlay mailcap
+RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-setup-lib otopi-common initscripts-service bind-utils postgresql ovirt-engine-wildfly-overlay mailcap ansible-runner ansible-collection-ansible-posix
 
 # engine-setup needs the link to initctl
 RUN ln -s /usr/sbin/service /usr/bin/initctl
@@ -31,7 +31,7 @@ RUN ln -s /usr/sbin/service /usr/bin/initctl
 # Set default User
 USER $USERNAME
 
-# Expose oVirt-Engine and Java Debugging ports
+# Expose oVirt-Engine, Java and ovirt imageio ports
 EXPOSE 8080 8443 8787
 
 # Set ulimit to stop memory leak
