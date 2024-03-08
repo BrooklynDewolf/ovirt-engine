@@ -34,5 +34,5 @@ USER $USERNAME
 # Expose oVirt-Engine and Java Debugging ports
 EXPOSE 8080 8443 8787
 
-# Set ulimit to stop memory leak
+# Set ulimit to stop memory leak when running engine https://pagure.io/python-daemon/issue/40
 RUN ulimit -n 2048
