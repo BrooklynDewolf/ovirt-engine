@@ -47,7 +47,7 @@ The values entered by this config can be found in `answers.config.in` file.
 
 ### Running the engine itself
 
-First, you need to set the ulimit of your environment:
+First, you need to set the ulimit of your environment (https://pagure.io/python-daemon/issue/40):
 
 ```
 ulimit -n 2048
@@ -57,4 +57,32 @@ You can start the engine by running the `ovirt-engine.py` file with start argume
 ```
 /home/build/ovirt/share/ovirt-engine/services/ovirt-engine/ovirt-engine.py start
 ```
+
+### Uploading images via `ovirt-imageio`
+
+In order to upload and download images via the administration portal, you will need to run the ovirt-imageio daemon. You can do this by executing the following command:
+```
+ovirt-imageio --conf-dir /home/build/ovirt/etc/ovirt-imageio
+```
+
+> If you are getting a certificate error when testing the connection, you will need to accept the certificate in your browser. You can either find the URL yourself by going to your network console in your browser, clicking the 'Test Connection' button and visiting the url that is giving an error OR you can simply navigate to `https://HOSTNAME:54323/info/` and accept the certificate.
+
+### Connecting via console to your VM instance
+
+In order to connect to the VM console via noVCN you will need to start the websocket service. However, it is possible that launching the service without setting a max files open limit will cause a memory leak, so we set a max open file limit.
+
+```
+ulimit -n 2048
+```
+
+Now we can safely boot the websocket service:
+
+```
+/home/build/ovirt/share/ovirt-engine/services/ovirt-websocket-proxy/ovirt-websocket-proxy.py start
+```
+
+Next, go to your newly created VM and click on the 'v' arrow next to console. Navigate to 'Console Options' and set 'Console Invocation' to 'noVCN'. You can save this and click on the 'Console' button.
+
+You will see an error: "Something went wrong, connection is closed", this is normal. You need to accept the SSL certificate in your browser. You can do this by opening your browser development console and copying the `wss://XXXXX` url to your browser URL bar. Replace `wss` with `https` and navigate to the url. You can accept the certificate here. You can now reopen the console via the oVirt administrator panel.
+
 

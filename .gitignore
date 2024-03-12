@@ -117,3 +117,4 @@ packaging/dbscripts/*.log
 # #########################
 *rebel.xml
 *.backup
+bac.dump
