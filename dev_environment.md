@@ -2,7 +2,7 @@
 
 There is already a `devcontainer.json` file present in the root directory of this repository, so it is not needed to configure this any different. You can configure this as a local devcontainer or remote devcontainer via Visual Studio Code. More info on how to setup a devcontainer can be found [here](https://code.visualstudio.com/docs/devcontainers/containers).
 
-Make sure that tools like [git](https://git-scm.com/) and [Docker](https://www.docker.com/) are installed on the machine that the devcontainer is running on. 
+Make sure that tools like [Git](https://git-scm.com/) and [Docker](https://www.docker.com/) are installed on the machine that the devcontainer is running on. 
 
 ### Setup the PostgresQL database
 
@@ -84,5 +84,3 @@ Now we can safely boot the websocket service:
 Next, go to your newly created VM and click on the 'v' arrow next to console. Navigate to 'Console Options' and set 'Console Invocation' to 'noVCN'. You can save this and click on the 'Console' button.
 
 You will see an error: "Something went wrong, connection is closed", this is normal. You need to accept the SSL certificate in your browser. You can do this by opening your browser development console and copying the `wss://XXXXX` url to your browser URL bar. Replace `wss` with `https` and navigate to the url. You can accept the certificate here. You can now reopen the console via the oVirt administrator panel.
-
-

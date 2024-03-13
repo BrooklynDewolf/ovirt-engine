@@ -29,7 +29,7 @@ RUN dnf -y install python3-daemon python3-otopi python3-psycopg2 python3-ovirt-s
 RUN ln -s /usr/sbin/service /usr/bin/initctl
 
 # Persist this folder to keep the generated TLS certificates on the first start
-VOLUME /etc/pki/ovirt-engine
+VOLUME /home/build/ovirt/etc/pki/ovirt-engine
 
 # Set default User
 USER $USERNAME

@@ -1,6 +1,10 @@
 # ovirt-engine global ignore list
 ###########################
 
+# local backup folder
+###########################
+backup
+
 # mvn folders
 ###########################
 target
@@ -117,4 +121,3 @@ packaging/dbscripts/*.log
 # #########################
 *rebel.xml
 *.backup
-bac.dump
