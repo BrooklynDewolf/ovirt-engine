@@ -43,7 +43,7 @@
     <gwt-plugin.extraJvmArgs>-Dgwt.jjs.permutationWorkerFactory=com.google.gwt.dev.ThreadedPermutationWorkerFactory -Dgwt.jjs.maxThreads=4 -Djava.io.tmpdir="${project.build.directory}/tmp" -Djava.util.prefs.systemRoot="${project.build.directory}/tmp" -Djava.util.prefs.userRoot="${project.build.directory}/tmp" -Djava.util.logging.config.class=org.ovirt.engine.ui.gwtaop.JavaLoggingConfig ${gwt.jvmArgs}</gwt-plugin.extraJvmArgs>
     <!-- Control target browsers for GWT compilation, maps to 'user.agent' deferred binding property in *.gwt.xml -->
     <!-- By default, compile for Firefox browser only, use 'all-user-agents' profile to compile for all browsers -->
-    <gwt.userAgent>safari</gwt.userAgent>
+    <gwt.userAgent>gecko1_8</gwt.userAgent>
     <!-- Control target locales for GWT compilation, maps to 'locale' deferred binding property in *.gwt.xml -->
     <!-- By default, only English locale is supported, see 'all-langs' profile for a complete list -->
     <gwt.locale>en_US</gwt.locale>

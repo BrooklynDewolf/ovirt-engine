@@ -69,7 +69,6 @@ enroll() {
 	fi
 
 
-	cd "${PKIDIR}"
 	touch "${PKIDIR}/private/${CA_FILE}.pem"
 	chmod o-rwx "${PKIDIR}/private/${CA_FILE}.pem" || die "Cannot set CA permissions"
 	openssl genpkey \
@@ -87,6 +86,7 @@ enroll() {
 		|| die "Cannot generate CA request"
 
 	(
+		cd "${PKIDIR}"
 		openssl ca \
 			-batch \
 			-config openssl.conf \
