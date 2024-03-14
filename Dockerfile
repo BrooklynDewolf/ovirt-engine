@@ -31,6 +31,9 @@ RUN ln -s /usr/sbin/service /usr/bin/initctl
 # Persist this folder to keep the generated TLS certificates on the first start
 VOLUME /home/build/ovirt/etc/pki/ovirt-engine
 
+# Edit the /etc/security/limits.conf file to set the number of open files to prevent memory leak https://pagure.io/python-daemon/issue/40
+RUN echo "build soft nofile 2048" >> /etc/security/limits.conf
+
 # Set default User
 USER $USERNAME
 

@@ -81,6 +81,6 @@ Now we can safely boot the websocket service:
 /home/build/ovirt/share/ovirt-engine/services/ovirt-websocket-proxy/ovirt-websocket-proxy.py start
 ```
 
-Next, go to your newly created VM and click on the 'v' arrow next to console. Navigate to 'Console Options' and set 'Console Invocation' to 'noVCN'. You can save this and click on the 'Console' button.
+Next, go to your newly created VM and click on the 'v' arrow next to console. iNavigate to 'Console Options' and set 'Console Invocation' to 'noVCN'. You can save this and click on the 'Console' button.
 
 You will see an error: "Something went wrong, connection is closed", this is normal. You need to accept the SSL certificate in your browser. You can do this by opening your browser development console and copying the `wss://XXXXX` url to your browser URL bar. Replace `wss` with `https` and navigate to the url. You can accept the certificate here. You can now reopen the console via the oVirt administrator panel.
