@@ -158,7 +158,7 @@ public class MainStorageView extends AbstractMainWithDetailsTableView<StorageDom
                 return SafeHtmlUtils.fromString(constants.confirmedFreeSpaceStorageThinTooltip());
             }
         };
-        getTable().addColumn(confirmedFreeSpaceColumn, constants.confirmedFreeSpaceStorage(), "180px");
+        getTable().addColumn(confirmedFreeSpaceColumn, constants.confirmedFreeSpaceStorage(), "180px"); //$NON-NLS-1$
 
         AbstractStorageSizeColumn<StorageDomain> allocatedSpaceColumn = new AbstractStorageSizeColumn<StorageDomain>() {
             @Override
@@ -167,7 +167,7 @@ public class MainStorageView extends AbstractMainWithDetailsTableView<StorageDom
                 return allocatedSpace == null ? null : Long.valueOf(allocatedSpace);
             }
         };
-        getTable().addColumn(allocatedSpaceColumn, constants.totalSpaceStorage(), "130px");
+        getTable().addColumn(allocatedSpaceColumn, constants.totalSpaceStorage(), "130px"); //$NON-NLS-1$
 
         AbstractTextColumn<StorageDomain> descriptionColumn = new AbstractTextColumn<StorageDomain>() {
             @Override
