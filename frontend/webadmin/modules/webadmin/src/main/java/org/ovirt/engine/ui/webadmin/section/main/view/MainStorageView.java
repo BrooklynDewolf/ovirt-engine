@@ -167,7 +167,7 @@ public class MainStorageView extends AbstractMainWithDetailsTableView<StorageDom
                 return allocatedSpace == null ? null : Long.valueOf(allocatedSpace);
             }
         };
-        getTable().addColumn(allocatedSpaceColumn, constants.totalSpaceStorage(), "130px"); //$NON-NLS-1$
+        getTable().addColumn(allocatedSpaceColumn, constants.allocatedSpaceStorage(), "130px"); //$NON-NLS-1$
 
         AbstractTextColumn<StorageDomain> descriptionColumn = new AbstractTextColumn<StorageDomain>() {
             @Override
