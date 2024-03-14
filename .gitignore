@@ -1,10 +1,6 @@
 # ovirt-engine global ignore list
 ###########################
 
-# local backup folder
-###########################
-backup
-
 # mvn folders
 ###########################
 target
@@ -120,4 +116,3 @@ packaging/dbscripts/*.log
 # jrebel plugin integration for IDE
 # #########################
 *rebel.xml
-*.backup
