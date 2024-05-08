@@ -433,6 +433,8 @@ public interface ApplicationConstants extends CommonApplicationConstants {
 
     String virtualMachineSnapshotSubTabLabel();
 
+    String virtualMachineCheckpointSubTabLabel();
+
     String virtualMachineApplicationSubTabLabel();
 
     String virtualMachineContainerSubTabLabel();

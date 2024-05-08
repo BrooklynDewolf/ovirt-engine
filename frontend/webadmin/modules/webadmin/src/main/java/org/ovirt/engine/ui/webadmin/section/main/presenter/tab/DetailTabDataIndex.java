@@ -240,6 +240,8 @@ public final class DetailTabDataIndex {
 
     public static final TabData VIRTUALMACHINE_SNAPSHOT = new GroupedTabData(constants.virtualMachineSnapshotSubTabLabel(), 3); //$NON-NLS-1$
 
+    public static final TabData VIRTUALMACHINE_CHECKPOINT = new GroupedTabData(constants.virtualMachineCheckpointSubTabLabel(), 3); //$NON-NLS-1$
+
     public static final TabData VIRTUALMACHINE_GUEST_CONTAINER = new GroupedTabData(constants.virtualMachineContainerSubTabLabel(), 4); //$NON-NLS-1$
 
     public static final TabData VIRTUALMACHINE_APPLICATION = new GroupedTabData(constants.virtualMachineApplicationSubTabLabel(), 4); //$NON-NLS-1$

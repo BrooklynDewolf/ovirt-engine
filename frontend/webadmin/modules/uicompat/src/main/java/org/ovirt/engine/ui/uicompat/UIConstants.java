@@ -553,6 +553,10 @@ public interface UIConstants extends Constants {
 
     String commitSnapshotTitle();
 
+    String checkpointsTitle();
+
+    String deleteCheckpointTitle();
+
     String preserveActiveDisks();
 
     String excludeActiveDisks();

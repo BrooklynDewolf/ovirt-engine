@@ -305,6 +305,10 @@ public interface CommonApplicationConstants extends Constants {
 
     String snapshotContainsMemory();
 
+    String createdCheckpoint();
+
+    String invalidCheckpoint();
+
     String loadingLabel();
 
     String generalLabel();
@@ -778,6 +782,8 @@ public interface CommonApplicationConstants extends Constants {
     String installedAppsSnapshot();
 
     String nameSnapshot();
+
+    String deleteCheckpoint();
 
     String namesContainer();
 

@@ -83,6 +83,7 @@ public final class WebAdminApplicationPlaces {
     public static final String virtualMachineVirtualDiskSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "disks"; //$NON-NLS-1$
     public static final String virtualMachineHostDeviceSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "host_devices"; //$NON-NLS-1$
     public static final String virtualMachineSnapshotSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "snapshots"; //$NON-NLS-1$
+    public static final String virtualMachineCheckpointSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "checkpoints"; //$NON-NLS-1$
     public static final String virtualMachineApplicationSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "applications"; //$NON-NLS-1$
     public static final String virtualMachineContainerSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "guest_containers"; //$NON-NLS-1$
     public static final String virtualMachineVmDeviceSubTabPlace = virtualMachineMainPlace + SUB_TAB_PREFIX + "vm_devices"; //$NON-NLS-1$
