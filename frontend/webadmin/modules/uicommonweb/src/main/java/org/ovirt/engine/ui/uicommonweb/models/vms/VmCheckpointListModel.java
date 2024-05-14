@@ -200,10 +200,6 @@ public class VmCheckpointListModel extends SearchableListModel<VM, VmCheckpoint>
         setWindow(null);
     }
 
-    protected NewTemplateVmModelBehavior createNewTemplateBehavior(Guid snapshotId) {
-        return new NewTemplateVmModelBehavior(snapshotId);
-    }
-
     public void updateActionAvailability() {
         if (getItems() == null) {
             // no need to update action availability

@@ -21,7 +21,7 @@ public class VmCheckpointActionPanelPresenterWidget extends
 
     @Inject
     public VmCheckpointActionPanelPresenterWidget(EventBus eventBus,
-                                                  ViewDef<VM, VmCheckpoint> view,
+                                                  DetailActionPanelPresenterWidget.ViewDef<VM, VmCheckpoint> view,
                                                   SearchableDetailModelProvider<VmCheckpoint, VmListModel<Void>, VmCheckpointListModel> dataProvider) {
         super(eventBus, view, dataProvider);
     }
