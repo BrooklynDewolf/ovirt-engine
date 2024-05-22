@@ -371,7 +371,6 @@ import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.user.UserSubTabPa
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineAffinityGroupPresenter;
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineAffinityLabelPresenter;
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineApplicationPresenter;
-import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineCheckpointPresenter;
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineErrataPresenter;
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineEventPresenter;
 import org.ovirt.engine.ui.webadmin.section.main.presenter.tab.virtualMachine.SubTabVirtualMachineGeneralPresenter;
@@ -660,7 +659,6 @@ import org.ovirt.engine.ui.webadmin.section.main.view.tab.user.UserSubTabPanelVi
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineAffinityGroupView;
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineAffinityLabelView;
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineApplicationView;
-import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineCheckpointView;
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineErrataView;
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineEventView;
 import org.ovirt.engine.ui.webadmin.section.main.view.tab.virtualMachine.SubTabVirtualMachineGeneralView;
@@ -1104,10 +1102,6 @@ public class PresenterModule extends BasePresenterModule {
                 SubTabVirtualMachineSnapshotPresenter.ViewDef.class,
                 SubTabVirtualMachineSnapshotView.class,
                 SubTabVirtualMachineSnapshotPresenter.ProxyDef.class);
-        bindPresenter(SubTabVirtualMachineCheckpointPresenter.class,
-                SubTabVirtualMachineCheckpointPresenter.ViewDef.class,
-                SubTabVirtualMachineCheckpointView.class,
-                SubTabVirtualMachineCheckpointPresenter.ProxyDef.class);
         bindPresenter(SubTabVirtualMachineApplicationPresenter.class,
                 SubTabVirtualMachineApplicationPresenter.ViewDef.class,
                 SubTabVirtualMachineApplicationView.class,
